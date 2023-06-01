@@ -1,11 +1,6 @@
 /* eslint-disable react/prop-types */
 
-const Pagination = ({
-  filteredData,
-  rowsPerPage,
-  currentPage,
-  paginate,
-}) => {
+const Pagination = ({ filteredData, rowsPerPage, currentPage, paginate }) => {
   const totalPages = Math.ceil(filteredData.length / rowsPerPage);
   const displayPages = 5; // Number of page numbers to display
   const displayRange = Math.min(displayPages, totalPages);
