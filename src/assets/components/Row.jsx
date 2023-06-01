@@ -1,6 +1,10 @@
 /* eslint-disable react/prop-types */
+import filler from '../img/filler.webp'
 
 const TableRow = ({ row }) => {
+  if(!Object.prototype.hasOwnProperty.call(row,'Photo')){
+    row.Photo = ''
+  }
   return (
     <tr>
       {Object.entries(row).map(([key, value]) => (
@@ -8,7 +12,7 @@ const TableRow = ({ row }) => {
           {key === "Photo" ? (
             <img
               className="object-cover w-[30px] h-[30px] rounded-full object-top mx-auto"
-              src={value}
+              src={value !=='' ? value : filler}
               alt="Employee"
             />
           ) : (
